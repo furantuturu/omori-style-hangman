@@ -1,0 +1,8 @@
+.hangman-word-container {
+    font-size: 5rem;
+}
+
+.letter-styles {
+    margin-inline: .20em;
+    border-bottom: 5px solid #fff;
+}
