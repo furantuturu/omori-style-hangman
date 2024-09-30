@@ -1,9 +1,7 @@
-import DefaultHangman from "./assets/imgs/omori-hangman-imgs/default.svg?react";
-
 function HangmanModel() {
     return (
         <div>
-            <DefaultHangman />
+            <img src="/omori-hangman-imgs/default.svg" />
         </div>
     )
 }
