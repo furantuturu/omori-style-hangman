@@ -1,8 +1,21 @@
 .hangman-word-container {
     font-size: 5rem;
+    text-align: center;
 }
 
 .letter-styles {
     margin-inline: .20em;
     border-bottom: 5px solid #fff;
+}
+
+img {
+    transition: all .5s ease;
+}
+
+.active {
+    opacity: 1;
+}
+
+.inactive {
+    opacity: 0;
 }
