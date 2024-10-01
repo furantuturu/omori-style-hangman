@@ -8,7 +8,7 @@
     border-bottom: 5px solid #fff;
 }
 
-img {
+.hangman-word-container img {
     transition: all .5s ease;
 }
 
@@ -18,4 +18,9 @@ img {
 
 .inactive {
     opacity: 0;
+}
+
+.reveal-on-fail:not(.active) {
+    opacity: 1;
+    background-color: red;
 }
