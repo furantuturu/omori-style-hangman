@@ -8,10 +8,6 @@
     border-bottom: 5px solid #fff;
 }
 
-.hangman-word-container img {
-    transition: all .5s ease;
-}
-
 .active {
     opacity: 1;
 }
