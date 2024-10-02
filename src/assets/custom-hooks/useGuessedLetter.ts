@@ -29,5 +29,5 @@ export default function useGuessedLetter(wordToGuess: string) {
         }
     }, [guessedLetters])
 
-    return { guessedLetters, incorrectLetters, isWin, isLose }
+    return { guessedLetters, setGuessedLetters, incorrectLetters, isWin, isLose }
 }
