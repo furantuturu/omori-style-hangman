@@ -17,10 +17,7 @@ function HangmanWord({ wordToGuess, guessedLetters, incorrectLettersLength }: Ha
                 return (
                     <span key={idx} className="letter-styles">
                         <img
-                            className={`
-                                ${toggleActive}
-                                ${toggleReveal}
-                            `}
+                            className={`${toggleActive} ${toggleReveal}`}
                             src={`/omori-hangman-keys/${letter}.webp`}
                             alt={letter} />
                     </span>
