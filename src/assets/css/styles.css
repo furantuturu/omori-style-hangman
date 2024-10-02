@@ -6,19 +6,14 @@
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
+    box-sizing: border-box;
 }
 
 body {
-    box-sizing: border-box;
     font-family: 'Omori';
     font-weight: bold;
     font-display: swap;
     color: #fff;
     background: linear-gradient(45deg, #040401 0%, #0a0d09 24%, #0d0f0c 50%, #171a14 76%, #1d221b 100%);
-
+    height: 94vh;
 }
