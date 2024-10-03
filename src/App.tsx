@@ -2,6 +2,8 @@ import { lazy, Suspense, useState } from "react";
 import useGuessedLetter from "./assets/custom-hooks/useGuessedLetter";
 import "./assets/css/App.css";
 import getWord from "./assets/helpers/getWord";
+import IncorrectLettersDisplay from './IncorrectLettersDisplay';
+import WordDefinition from "./WordDefinition";
 
 const Modal = lazy(() => import('./Modal'))
 const HangmanModel = lazy(() => import('./HangmanModel'))
@@ -14,7 +16,8 @@ function App() {
 
   return (
     <div className="container">
-      <h1 style={{ position: 'absolute', top: '10px', left: '10px' }}>Type any alphabetical key</h1>
+      <WordDefinition wordToGuess={wordToGuess} />
+      <IncorrectLettersDisplay incorrectLetters={incorrectLetters} />
       <Suspense fallback={<h1>Loading...</h1>}>
         {isWin || isLose ? (
           <Modal
