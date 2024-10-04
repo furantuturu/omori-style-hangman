@@ -1,4 +1,4 @@
-import './assets/css/dropdowns.css'
+import './assets/css/IncorrectLettersDisplay.css'
 
 type IncorrectLettersDisplayProp = {
     incorrectLetters: string[]
