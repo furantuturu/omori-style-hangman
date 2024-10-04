@@ -1,43 +1,38 @@
-import { lazy, Suspense, useState } from "react";
-import useGuessedLetter from "./assets/custom-hooks/useGuessedLetter";
-import "./assets/css/App.css";
-import getWord from "./assets/helpers/getWord";
-import IncorrectLettersDisplay from './IncorrectLettersDisplay';
-import WordDefinition from "./WordDefinition";
+import { lazy, Suspense, useState } from 'react'
+import './assets/css/App.css'
 
-const Modal = lazy(() => import('./Modal'))
-const HangmanModel = lazy(() => import('./HangmanModel'))
-const HangmanWord = lazy(() => import('./HangmanWord'))
+const MainGame = lazy(() => import('./MainGame'))
 
 function App() {
-  const [wordToGuess, setWordToGuess] = useState<string>(getWord())
+    const [isStart, setIsStart] = useState(false)
 
-  const { guessedLetters, setGuessedLetters, incorrectLetters, isWin, isLose } = useGuessedLetter(wordToGuess);
+    function handleStart() {
+        setIsStart(true)
+    }
 
-  return (
-    <div className="container">
-      <WordDefinition wordToGuess={wordToGuess} />
-      <IncorrectLettersDisplay incorrectLetters={incorrectLetters} />
-      <Suspense fallback={<h1>Loading...</h1>}>
-        {isWin || isLose ? (
-          <Modal
-            isWin={isWin}
-            isLose={isLose}
-            setGuessedLetters={setGuessedLetters}
-            getWord={getWord}
-            setWordToGuess={setWordToGuess}
-          />
-        ) : ''
-        }
-        <HangmanModel incorrectLettersLength={incorrectLetters.length} />
-        <HangmanWord
-          wordToGuess={wordToGuess}
-          guessedLetters={guessedLetters}
-          incorrectLettersLength={incorrectLetters.length}
-        />
-      </Suspense>
-    </div>
-  )
+    return (
+        <>
+            {isStart ?
+                <>
+                    <Suspense fallback={<h1>Game Loading...</h1>}>
+                        <MainGame />
+                    </Suspense>
+                </>
+
+                :
+                <>
+                    <div className="bg-image"></div>
+                    <div className="intro">
+                        <h1>Start guessing by pressing any alphabetical key on your keyboard</h1>
+                        <p>You can check the "Check Definition" on the top right side to give you the idea about the word being guessed</p>
+                        <p>There is also a "Wrong Letters" dropdown on the top left side to indicate letters that were not guessed right</p>
+                        <hr />
+                        <button onClick={handleStart}>Click here to start</button>
+                    </div>
+                </>
+            }
+        </>
+    )
 }
 
 export default App
