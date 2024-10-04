@@ -16,4 +16,22 @@ body {
     color: #fff;
     background: linear-gradient(45deg, #040401 0%, #0a0d09 24%, #0d0f0c 50%, #171a14 76%, #1d221b 100%);
     height: 94vh;
+    overflow: hidden;
+}
+
+button {
+    font-family: 'Omori';
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    outline: none;
+    border-style: none;
+    padding: .5em;
+    cursor: pointer;
+    transition: all .2s ease-out;
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.5);
+    }
 }
