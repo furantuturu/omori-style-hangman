@@ -6,7 +6,7 @@ type WordDefinitionModalProp = {
     wordToGuess: string
 }
 
-function WordDefinitionModal({ wordToGuess }: WordDefinitionModalProp) {
+function WordDefinitionModal({ wordToGuess }: Readonly<WordDefinitionModalProp>) {
     const modalRef = useRef<HTMLDialogElement>(null)
     const wordMeanings = useGetWordMeanings(wordToGuess)
 
@@ -32,9 +32,9 @@ function WordDefinitionModal({ wordToGuess }: WordDefinitionModalProp) {
                 ref={modalRef}
             >
                 {
-                    wordMeanings.map((wordMeaning, idx) => {
+                    wordMeanings.map(wordMeaning => {
                         return (
-                            <div key={idx} >
+                            <div key={wordMeaning.partOfSpeech} >
                                 <h3>{wordMeaning.partOfSpeech}</h3>
                                 <p>{wordMeaning.definitions[0].definition}</p>
                                 <p>{wordMeaning.definitions[1]?.definition}</p>

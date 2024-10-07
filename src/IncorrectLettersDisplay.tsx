@@ -4,13 +4,13 @@ type IncorrectLettersDisplayProp = {
     incorrectLetters: string[]
 }
 
-function IncorrectLettersDisplay({ incorrectLetters }: IncorrectLettersDisplayProp) {
+function IncorrectLettersDisplay({ incorrectLetters }: Readonly<IncorrectLettersDisplayProp>) {
     return (
         <details className="incorrect-letters-dropdown" open>
             <summary>Wrong Letters</summary>
             <ul>
-                {incorrectLetters.map((wrongLetter, idx) => {
-                    return <li key={idx}>{wrongLetter.toUpperCase()}</li>
+                {incorrectLetters.map(wrongLetter => {
+                    return <li key={wrongLetter}>{wrongLetter.toUpperCase()}</li>
                 })}
             </ul>
         </details>
