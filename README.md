@@ -1,0 +1,1 @@
+# Omori-styled hangman game
