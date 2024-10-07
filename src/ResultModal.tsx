@@ -9,7 +9,7 @@ type ModalProp = {
     setWordToGuess: React.Dispatch<React.SetStateAction<string>>,
 }
 
-function ResultModal({ isWin, isLose, setGuessedLetters, getWord, setWordToGuess }: ModalProp) {
+function ResultModal({ isWin, isLose, setGuessedLetters, getWord, setWordToGuess }: Readonly<ModalProp>) {
     const modalRef = useRef<HTMLDialogElement>(null)
 
     useEffect(() => {
