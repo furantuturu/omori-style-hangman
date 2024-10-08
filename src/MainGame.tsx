@@ -4,9 +4,9 @@ import getWord from "./assets/helpers/getWord";
 import IncorrectLettersDisplay from './IncorrectLettersDisplay';
 import WordDefinitionModal from "./WordDefinitionModal";
 import HangmanModel from "./HangmanModel";
+import HangmanWord from "./HangmanWord";
 import "./assets/css/MainGame.css";
 
-const HangmanWord = lazy(() => import('./HangmanWord'))
 const ResultModal = lazy(() => import('./ResultModal'))
 
 function MainGame() {
@@ -28,8 +28,13 @@ function MainGame() {
 
       <HangmanModel incorrectLettersLength={incorrectLetters.length} />
 
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <HangmanWord
+        wordToGuess={wordToGuess}
+        guessedLetters={guessedLetters}
+        incorrectLettersLength={incorrectLetters.length}
+      />
 
+      <Suspense fallback={<h1>Loading Result</h1>}>
         {isWin || isLose ? (
           <ResultModal
             isWin={isWin}
@@ -40,13 +45,6 @@ function MainGame() {
           />
         ) : ''
         }
-
-        <HangmanWord
-          wordToGuess={wordToGuess}
-          guessedLetters={guessedLetters}
-          incorrectLettersLength={incorrectLetters.length}
-        />
-
       </Suspense>
       <audio src="/audios/bgm(omori-welcomeagain).mp3" ref={bgm} loop></audio>
     </div>
