@@ -24,7 +24,7 @@ function WordDefinitionModal({ wordToGuess }: Readonly<WordDefinitionModalProp>)
                 onClick={handleShowModal}
                 className="word-definition-modal-btn"
             >
-                Check Definiton
+                Check Definition
             </button>
             <dialog
                 onClick={handleCloseModal}
