@@ -2,7 +2,7 @@
 
 Hangman is a cool project that I chose to make when learning React with Typescript so I decided to make it with some guides on the internet on how it works generally and since I also played the game called [Omori](https://store.steampowered.com/app/1150690/OMORI/) reaching a certain point to the game having a Hangman segment, I decided to use some of their assets mainly Hangman assets and some BGMs and SFXs to apply it to my app. Feel free to check the game as well if you haven't tried it!
 
-`wordlist.json` is from this [repo](https://github.com/bevacqua/correcthorse/blob/master/wordlist.json) but I filtered and removed words that are less than 4 letters
+- `wordlist.json` is from this [repo](https://github.com/bevacqua/correcthorse/blob/master/wordlist.json) but I filtered and removed words that are less than 4 letters
 
 ## Features
 (Check [Screenshots](#screenshots) section)
