@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "keywords": ["omori", "hangman", "hangman game"],
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
     "babel-plugin-react-compiler": "^19.0.0-beta-e1e972c-20250221",
